@@ -1,18 +1,41 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{url}
 
-\title{Indoor 3D localisation using RSSI}
+\title{Indoor Localisation in 3D using Received Signal Strength Indication (RSSI)}
 \author{Marcus Utter }
 \date{April 2015}
 
 \begin{document}
 
 \maketitle
+\clearpage
 
-\section{Bakgrund}
 
-\section{Test}
-Att ta reda på vilken byggnad en GPS-mottagare befinner sig i går idag oftast bra. Vill man däremot veta i vilket rum och var i det rummet mottagaren finns går det oftast inte lika bra. iBeacon är ett Indoor Positioning System (IPS) som tagits fram för att möjliggöra just detta och tillverkare påstår att deras sändare, som kallas beacons, har en noggrannhet på ungefär 0,5 - 1m [http://estimote.com/indoor/]. 
-Syftet med exjobbet är att undersöka hur noggrant man kan lokalisera ett objekt i rummets tre dimensioner med hjälp av beacons samt vilka begränsningar det finns med ett sådant system. Jag har hittat en del mer generella studier av 3D-lokalisering med hjälp av system uppbyggt kring trådlösa sensorer (“ 3D localization with a mobile beacon in wireless sensor networks,” n.d.)  sss  men ingen som undersöker iBeacon vilket använder sig av små, energisnåla bluetooth-sändare.
+\tableofcontents
+\clearpage
+%\setcounter{page}{x} %UNCOMMENT THIS AND SET X TO SET PAGE NUMBER TO X
 
+% INTRODUCTION
+\input{tex/01_Introduction.tex}
+
+% THEORY
+\input{tex/02_Theory.tex}
+
+% METHOD
+\input{tex/03_Method.tex}
+
+% RESULT
+\input{tex/04_Result.tex}
+
+% RELATED WORK
+\input{tex/05_RelatedWork.tex}
+
+% CONCLUSION
+\input{tex/06_Conclusions.tex}
+
+% BIBLIOGRAPHY
+\section{Bibliography}
+\bibliography{bibliography}
+\bibliographystyle{vancouver}
 \end{document}
