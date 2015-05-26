@@ -1,11 +1,29 @@
+
 \section{Introduction}
-
 \subsection{Background}
-Localisation is something that's been of importance for a long time and Global Positioning System (GPS) has taken us within meters of certainty today \cite{_gps.gov:_2015}. When locating the position of a building that kind of accuracy is acceptable but it is not sufficient when it comes to localising objects indoors, when there is need to know where inside of a building something is situated. Knowledge of the location of an object in 3D and indoors could be useful, for example,  in large warehouses or in emergency situations.
+Localisation has been of importance for a long time and Global Positioning System (GPS) has taken us within meters of certainty today \cite{_gps.gov:_2015}. When locating the position of a building that kind of accuracy is acceptable but it is not sufficient when it comes to localising objects indoors, when there is need to know where inside of a building something is situated. Knowledge of the location of an object in 3-D and indoors could be useful, for example, in large warehouses or in emergency situations.
 
-Several research papers proposes an Indoor Positioning System (IPS) utilising Received Signal Strength Indication (RSSI) 
-\cite{lee_3d-localization---mobile-beacon.pdf_2012,kim_mobile_2010,hassan_indoor_2010}, a measurement of the power present in a received radio signal. RSSI is used to estimate the distance between the communicating objects, which is needed to calculate the approximated location of the subject. 
+Several papers proposes an Indoor Positioning System (IPS) utilising Received Signal Strength Indication (RSSI) 
+\cite{lee_3d-localization---mobile-beacon.pdf_2012,kim_mobile_2010,hassan_indoor_2010}, a measurement of the power present in a received radio signal. RSSI is used to estimate the distance between the communicating objects, which is needed to calculate the approximated location of the subject by applying three-dimensional trilateration. While RSSI based IPS's has been shown to successfully approximate the location in 3-D the average accuracy ranges from 1 to 2 metres \cite{hassan_indoor_2010,luo_comparative_2011}. Taken into account that the ceiling height in houses are circa 2.4 metres an accuracy of 2 metres will not be sufficient to be able to localise at which height the subject resides.
+
+Bharadwaj proposes an IPS using Ultra-wideband (UWB) technology for communication
+\cite{bharadwaj_ultrawideband-based_2014} which offers potential applications in high-resolution positioning by high-precision ranging based on time-of-arrival (ToA). ToA is the travel time of a radio signal from the transmitter to the receiver and this could be used to calculate the distance since radio signals travel with known velocity. Once the distance is calculated, trilateration can be used in the same way as the RSSI-based IPS. A working example that uses ToA and works similarly to Bharadwaj's proposal is GPS. One difference with GPS is that it has to take the Special and General theories of Relativity \cite{einstein_relativity_1920} into account since the transmitters (satellites) are constantly moving \cite{_gps_????} which is not the case in Bharadwaj's proposal. UWB based IPS's has shown much better accuracy compared to RSSI based IPS's reaching centimetre\cite{bharadwaj_ultrawideband-based_2014} and even millimetre\cite{zhang_real-time_2009} precision.
 
 %State your contributions 
+This report investigates the UWB based IPS further by confirming previous work and expanding the test environment to a full-sized furnished room in order to investigate its practical use and its robustness regarding interference.
+
+%Research question(s)
+\subsection{Research questions}
+This report aims to answer the following main and subsidiary questions:
+\begin{itemize}	
+	\item Is a UWB-based positioning system suitable for localising a subject in a furnished room in 3-D?
+	\begin{itemize}
+		\item How accurate can a UWB-based positioning system localise a subject in 3-D?
+		\item How sensitive is a UWB-based positioning system to interference?
+	\end{itemize}
+\end{itemize}
+
+%Related work
+%\subsection{Related Work}
 
 \clearpage
