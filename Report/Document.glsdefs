@@ -1,0 +1,120 @@
+\ifglsentryexists{uwb}{}%
+{%
+\gls@defglossaryentry{uwb}%
+{%
+name={UWB},%
+sort={UWB},%
+type={acronym},%
+first={Ultra wideband\glsspace (UWB)},%
+firstplural={Ultra widebands\glsspace (UWBs)},%
+text={UWB},%
+plural={UWBs},%
+description={Ultra wideband},%
+descriptionplural={Ultra wideband\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Ultra wideband},%
+longplural={Ultra widebands},%
+short={UWB},%
+shortplural={UWBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gps}{}%
+{%
+\gls@defglossaryentry{gps}%
+{%
+name={GPS},%
+sort={GPS},%
+type={acronym},%
+first={Global Positioning System\glsspace (GPS)},%
+firstplural={Global Positioning Systems\glsspace (GPSs)},%
+text={GPS},%
+plural={GPSs},%
+description={Global Positioning System},%
+descriptionplural={Global Positioning System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Global Positioning System},%
+longplural={Global Positioning Systems},%
+short={GPS},%
+shortplural={GPSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{toa}{}%
+{%
+\gls@defglossaryentry{toa}%
+{%
+name={ToA},%
+sort={ToA},%
+type={acronym},%
+first={Time of Arrival\glsspace (ToA)},%
+firstplural={Time of Arrivals\glsspace (ToAs)},%
+text={ToA},%
+plural={ToAs},%
+description={Time of Arrival},%
+descriptionplural={Time of Arrival\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Time of Arrival},%
+longplural={Time of Arrivals},%
+short={ToA},%
+shortplural={ToAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{spi}{}%
+{%
+\gls@defglossaryentry{spi}%
+{%
+name={SPI},%
+sort={SPI},%
+type={acronym},%
+first={Serial Peripheral Interface\glsspace (SPI)},%
+firstplural={Serial Peripheral Interfaces\glsspace (SPIs)},%
+text={SPI},%
+plural={SPIs},%
+description={Serial Peripheral Interface},%
+descriptionplural={Serial Peripheral Interface\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Serial Peripheral Interface},%
+longplural={Serial Peripheral Interfaces},%
+short={SPI},%
+shortplural={SPIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

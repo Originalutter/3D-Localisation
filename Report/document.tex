@@ -1,14 +1,17 @@
 \documentclass{article}
+\usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage{url}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[toc,acronym]{glossaries}
+\usepackage{todonotes}
+\makeglossaries
 
 \title{3-D Localisation using Ultra-wideband}
 \author{Marcus Utter }
 \date{September 2015}
-
 \begin{document}
 \maketitle
 \clearpage
@@ -18,6 +21,9 @@
 
 %\setcounter{page}{x} %UNCOMMENT THIS AND SET X TO SET PAGE NUMBER TO X
 
+% LIST OF ACRONYMS
+\input{tex/Acronyms.tex}
+
 % INTRODUCTION
 \input{tex/01_Introduction.tex}
 
@@ -25,16 +31,16 @@
 \input{tex/02_Theory.tex}
 
 % METHOD
-%\input{tex/03_Method.tex}
+\input{tex/03_Method.tex}
 
 % RESULT
-%\input{tex/04_Result.tex}
+\input{tex/04_Result.tex}
 
 % RELATED WORK (if not included in introduction)
-%\input{tex/05_RelatedWork.tex}
+\input{tex/05_RelatedWork.tex}
 
 % CONCLUSIONS AND FUTURE WORK
-%\input{tex/06_Conclusions.tex}
+\input{tex/06_Conclusions.tex}
 
 % BIBLIOGRAPHY
 \section{Bibliography}
