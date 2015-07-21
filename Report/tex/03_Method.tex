@@ -36,22 +36,64 @@
 			  \caption{A figure showing a Tmote Sky connected to a \gls{uwb} module.}
 			  \label{fig_Tmote_UWB}
 			\end{figure}
-		\subsubsection{RSSI}
+		\subsubsection{Path loss formula}
 		The model used to calculate the distance is derived from equation \ref{eq_rssidist} described in \cite{seidel_914_1992} where $\overline{PL}$ denotes mean path loss, $d_0$ denotes a reference distance, $d$ denotes the distance between the transmitter and the receiver and $n$ denotes the path loss exponent. 
 		\begin{equation} \label{eq_rssidist}
-		\overline{PL}(d) = PL(d_0) + 10 * n * log_{10}(\frac{d}{d_0})
+			\overline{PL}(d) = PL(d_0) + 10 * n * log_{10}(\frac{d}{d_0})
 		\end{equation}
 
 		Oguejiofor proposes a model where $d_0$ is one meter and utilizes equation \ref{eq_rssidist} to derive equation \ref{eq_rssidist2} where $n$ is the path loss exponent, $RSSI$ is the received signal strength and $PL(d_0)$ is the path loss at the reference distance of one meter away from the transmitter \cite{oguejiofor_trilateration_2013}. 
 		\begin{equation} \label{eq_rssidist2}
-		d = 10^{\frac{PL(d_0)-RSSI}{n*10}}
+			d = 10^{\frac{PL(d_0)-RSSI}{n*10}}
 		\end{equation}
 
 		Equation \ref{eq_plexp} was used to determine the value of the path loss exponent, $n$, using $M$ measurements as proposed by Oguejiofor \cite{oguejiofor_trilateration_2013}.
 		\begin{equation} \label{eq_plexp}
-		n = \frac{\sum_{i=1}^{M}[PL(d_i)-PL(d_0)]}{\sum_{i=1}^{M}[10*log_{10}(d_i)]}
+			n = \frac{\sum_{i=1}^{M}[PL(d_i)-PL(d_0)]}{\sum_{i=1}^{M}[10*log_{10}(d_i)]}
 		\end{equation}
 
+		\subsubsection{Polynomial curve fitting}
+		Using the path loss formula yielded no satisfying results and therefore another method using polynomial curve fitting was tested. The following measurements were made for applying polynomial curve fitting.
+
+		\begin{table}[H]
+			\centering
+			\caption{Recorded RSSI values at different distances}
+			\label{tbl_dist}
+			\begin{tabular}{|l|l|}
+				\hline
+				{\bf Distance in metres} & {\bf RSSI loss in dB} \\ \hline
+				1              & 11         \\
+				2              & 13         \\
+				3              & 15         \\
+				4              & 16         \\
+				5              & 18        	\\
+				6              & 20    		\\
+				7              & 21       	\\
+				8              & 23         \\
+				9              & 25         \\
+				10             & 27         \\ \hline
+			\end{tabular} 				
+		\end{table}
+			In order to find a polynomial function of degree $3$ to approximate the distance between two nodes by using the RSSI loss values, the RSSI loss values was saved as $X$ and the distances was saved as $Y$, the MATLAB function $polyfit$ was used as shown below.
+
+			\begin{verbatim}
+				polyfit(x,y,3)
+			\end{verbatim}
+
+			The result of the call to $polyfit$ was used to define the approximative distance function given by equation \ref{eq_approxdist}, where $x$ is the path loss expressed in dB.
+
+			\begin{equation}\label{eq_approxdist}
+				Distance = -8.1446*10^{-4}x^3 + 4.4385*10^-2x^2 - 0.18979x - 1.2203
+			\end{equation}
+
+			The obtained approximative function looked promising when comparing it to the measured distances in the range of 1 to 10 metres as shown in Figure \ref{fig_polyfit_plot}.
+
+			\begin{figure}[H] 
+			  \centering
+			      \includegraphics[height=0.7\textwidth]{img/polyfit}
+			  \caption{A plot visualizing the comparison of the measured distances and the results of the approximative function.}
+			  \label{fig_polyfit_plot}
+			\end{figure}
 		\todo{Rewrite this and maybe move it to theory! \ldots}
 		\subsubsection{API}
 		\subsubsection{Lab setup}
